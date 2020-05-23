@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>News</title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="mb-4">NEWS DATA</h1>
+    <a href="/api/fview" class="btn btn-success">Filter News</a>
+
+
+    <% news.forEach( element => { %>
+        <div class="card">
+            <img class="card-img-top" src="<%=element.urlToImage%>" alt="<%=element.title%>">
+            <div class="card-body">
+              <h5 class="card-title"> TITLE:  <%=element.title %></h5>
+              <h6 class="card-title"> AUTHOR:  <%=element.author %></h6>
+              <h6 class="card-title"> CATEGORY:  <%=element.category %></h6>
+              <p class="card-text"> DESCRIPTION:  <%=element.description%></p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted"><%= element.publishedAt %></small>
+            </div>
+          </div>
+    <% }) %>
+
+    
+  </div>
+</body>
+</html>
